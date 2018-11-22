@@ -373,7 +373,7 @@
         <span slot="title">消息提醒设置</span>
       </el-menu-item>
           <el-menu-item index="2">
-        <i class="el-icon-menu"></i>
+        <i class="shuiguan"></i>
         <span slot="title">委托代办</span>
       </el-menu-item>
      <el-submenu index="3">
@@ -381,18 +381,17 @@
           <el-menu-item index="3-1">测试增删改查</el-menu-item>
           <el-menu-item index="3-2">个人履历</el-menu-item>
           <el-menu-item index="3-3">室内公出申请单</el-menu-item>
-
         </el-submenu>
         <el-menu-item index="4">
-        <i class="el-icon-menu"></i>
+        <i class="laba"></i>
         <span slot="title">已发布公告</span>
       </el-menu-item>
         <el-menu-item index="5">
-        <i class="el-icon-menu"></i>
+        <i class="yaochi"></i>
         <span slot="title">修改密码</span>
       </el-menu-item>
         <el-menu-item index="6">
-        <i class="el-icon-menu"></i>
+        <i class="el-icon-date"></i>
         <span slot="title">个人日程</span>
       </el-menu-item>
     
@@ -774,6 +773,46 @@
 
   // color: red;
   background: url(./assets/liuchengjiankong.png) no-repeat;
+  width: 1.3125rem;
+  height: 1.3125rem;
+  display: inline-block;
+  background-size: 90%;
+  
+  // width: 20px;
+  // background-image: url(./assets/liuchengjiankong.png)
+}
+
+.shuiguan{
+
+  // color: red;
+  background: url(./assets/shuiguan.png) no-repeat;
+  width: 1.3125rem;
+  height: 1.3125rem;
+  display: inline-block;
+  background-size: 90%;
+  
+  // width: 20px;
+  // background-image: url(./assets/liuchengjiankong.png)
+}
+
+
+.laba{
+
+  // color: red;
+  background: url(./assets/laba.png) no-repeat;
+  width: 1.3125rem;
+  height: 1.3125rem;
+  display: inline-block;
+  background-size: 90%;
+  
+  // width: 20px;
+  // background-image: url(./assets/liuchengjiankong.png)
+}
+
+.yaochi{
+
+  // color: red;
+  background: url(./assets/yaochi.png) no-repeat;
   width: 1.3125rem;
   height: 1.3125rem;
   display: inline-block;
