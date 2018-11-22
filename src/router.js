@@ -1,12 +1,15 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import PageOne from './views/myPage/PageOne.vue';
+// import PageOne from './views/myPage/PageOne.vue';
 import PageTwo from './views/myPage/PageTwo.vue';
 // import PageThree from './views/myPage/PageThree.vue';
 import PageFour from './views/myPage/PageFour.vue';
 import PageThree from './views/myPage/PageThree.vue';
 import PageFive from './views/myPage/PageFive.vue';
 import Detail1 from './views/detail/Detail1.vue';
+import Home from './views/layout/Home.vue';
+import PersonManage from './views/layout/PersonManage.vue';
+
 // import PageFive from './views/myPage/PageFive.vue';
 
 
@@ -18,12 +21,20 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'pageone',
-      component: PageOne,
+      name: 'home',
+      component: Home,
+    },
+    // {
+    //   path: '/myPage/pageOne',
+    //   component: PageOne,
+    // },
+    {
+      path: '/layout/home',
+      component: Home,
     },
     {
-      path: '/myPage/pageOne',
-      component: PageOne,
+      path: '/layout/personManage',
+      component: PersonManage,
     },
     {
       path: '/myPage/pageTwo',
