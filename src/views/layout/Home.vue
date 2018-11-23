@@ -5,16 +5,51 @@
     
     <div class="grid-content bg-purple">
      
-        
+       <el-card class="box-card" shadow="hover">
+  <div slot="header" class="clearfix">
+    <span>卡片名称</span>
+    <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>
+  </div>
+  <div v-for="o in 4" :key="o" class="text item">
+    {{'列表内容 ' + o }}
+  </div>
+</el-card>
         </div></el-col>
-  <el-col :span="12"><div class="grid-content bg-purple"></div></el-col>
-
+  <el-col :span="12"><div class="grid-content bg-purple">
+          <el-table
+    :data="tableData"
+    style="width: 100%;height:100%; position:relative; overflow-y:scroll">
+    <el-table-column
+      type="index"
+      :index="indexMethod">
+    </el-table-column>
+    <el-table-column
+      prop="date"
+      label="日期"
+      width="180">
+    </el-table-column>
+    <el-table-column
+      prop="name"
+      label="姓名"
+      width="180">
+    </el-table-column>
+    <el-table-column
+      prop="address"
+      label="地址">
+    </el-table-column>
+  </el-table>
+    
+    
+    </div></el-col>
+      
 </el-row>
 
    <el-row :gutter="24">
   <el-col :span="12">
           
-    <div class="grid-content bg-purple"></div></el-col>
+    <div class="grid-content bg-purple">
+      
+      </div></el-col>
   <el-col :span="12"><div class="grid-content bg-purple"></div></el-col>
 
 </el-row>
@@ -54,4 +89,101 @@
     padding: 10px 0;
     background-color: #f9fafc;
   }
+  .text {
+    font-size: 14px;
+  }
+
+  .item {
+    margin-bottom: 18px;
+  }
+
+  .clearfix:before,
+  .clearfix:after {
+    display: table;
+    content: "";
+  }
+  .clearfix:after {
+    clear: both
+  }
+
+  .box-card {
+    width: 48.4375rem;
+    height: 300px;
+    position: relative;
+    overflow-y: scroll;
+  }
 </style>
+
+<script>
+  export default {
+    data() {
+      return {
+        tableData: [{
+          date: '2016-05-03',
+          name: '王小虎',
+          province: '上海',
+          city: '普陀区',
+          address: '上海市普陀区金沙江路 1518 弄',
+          zip: 200333,
+          tag: '家'
+        }, {
+          date: '2016-05-02',
+          name: '王小虎',
+          province: '上海',
+          city: '普陀区',
+          address: '上海市普陀区金沙江路 1518 弄',
+          zip: 200333,
+          tag: '公司'
+        },
+        {
+          date: '2016-05-02',
+          name: '王小虎',
+          province: '上海',
+          city: '普陀区',
+          address: '上海市普陀区金沙江路 1518 弄',
+          zip: 200333,
+          tag: '公司'
+        },
+        {
+          date: '2016-05-02',
+          name: '王小虎',
+          province: '上海',
+          city: '普陀区',
+          address: '上海市普陀区金沙江路 1518 弄',
+          zip: 200333,
+          tag: '公司'
+        },
+        {
+          date: '2016-05-02',
+          name: '王小虎',
+          province: '上海',
+          city: '普陀区',
+          address: '上海市普陀区金沙江路 1518 弄',
+          zip: 200333,
+          tag: '公司'
+        }, {
+          date: '2016-05-04',
+          name: '王小虎',
+          province: '上海',
+          city: '普陀区',
+          address: '上海市普陀区金沙江路 1518 弄',
+          zip: 200333,
+          tag: '家'
+        }, {
+          date: '2016-05-01',
+          name: '王小虎',
+          province: '上海',
+          city: '普陀区',
+          address: '上海市普陀区金沙江路 1518 弄',
+          zip: 200333,
+          tag: '公司'
+        }],
+      }
+    },
+    methods: {
+      indexMethod(index) {
+        return index * 2;
+      }
+    }
+  };
+</script>

@@ -9,7 +9,7 @@
         </el-col>
 <el-col :span="9" class="chang"  v-show="tab.isShow1">
  <el-menu :default-active="tab.activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
- <el-menu-item v-model="tab.index"  index="1"><router-link to="/layout/home" style="text-decoration:none;display:block">首页门户</router-link></el-menu-item>
+ <el-menu-item v-model="tab.index"  index="1"><router-link to="/layout/home" style="text-decoration:none;display:block;">首页门户</router-link></el-menu-item>
  <el-menu-item  v-model="tab.index" index="2">栏目维护</el-menu-item>
   <el-menu-item  v-model="tab.index" index="3"><router-link to="/detail/detail1" style="text-decoration:none;display:block">日常办公</router-link></el-menu-item>
   <el-menu-item  v-model="tab.index" index="4">客户合同管理</el-menu-item>
@@ -146,11 +146,15 @@
           <el-menu-item index="1-4-1">选项1</el-menu-item>
         </el-submenu>
       </el-submenu> -->
-    
+    <router-link to="/layout/roster" style="text-decoration:none;">
+
  <el-menu-item index="4">
         <!-- <i class="el-icon-menu"></i> -->
         <span slot="title">员工花名册</span>
       </el-menu-item>
+    </router-link>
+
+
        <el-menu-item index="5">
         <!-- <i class="el-icon-menu"></i> -->
         <span slot="title">流程中心</span>
@@ -695,7 +699,7 @@
   // background: red;
 }
 #navs {
-  margin-left: 0%;
+  margin-left: 0.45%;
   width: 82.625rem;
   height: 10rem;
   // background: #2A2E34;
@@ -750,7 +754,7 @@
 }
 .chang {
   // background: red;
-  margin-left: 0.1%;
+  margin-left: 0.35%;
   margin-top: 0.1%;
   width: 71.5545%;
 }
@@ -835,14 +839,14 @@
 .changyong1 {
   // margin-top: 0%;
   top: 0.5rem;
-  left: 20.8%;
+  left: 22.8%;
   // margin-left: 144.5%;
 }
 
 .changyong {
   // margin-top: 0%;
   top: 0.54rem;
-  left: 1.5888%;
+  left:3.102%;
   // margin-left: 144.5%;
 }
 // .changyong{

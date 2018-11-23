@@ -9,6 +9,7 @@ import PageFive from './views/myPage/PageFive.vue';
 import Detail1 from './views/detail/Detail1.vue';
 import Home from './views/layout/Home.vue';
 import PersonManage from './views/layout/PersonManage.vue';
+import Roster from './views/layout/Roster.vue';
 
 // import PageFive from './views/myPage/PageFive.vue';
 
@@ -19,6 +20,7 @@ export default new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [
+    //首页门户
     {
       path: '/',
       name: 'home',
@@ -35,6 +37,10 @@ export default new Router({
     {
       path: '/layout/personManage',
       component: PersonManage,
+    },
+    {
+      path: '/layout/roster',
+      component: Roster,
     },
     {
       path: '/myPage/pageTwo',
