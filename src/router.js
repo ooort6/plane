@@ -10,6 +10,8 @@ import Detail1 from './views/detail/Detail1.vue';
 import Home from './views/layout/Home.vue';
 import PersonManage from './views/layout/PersonManage.vue';
 import Roster from './views/layout/Roster.vue';
+import ProcessCenter from './views/layout/ProcessCenter.vue';
+
 
 // import PageFive from './views/myPage/PageFive.vue';
 
@@ -41,6 +43,10 @@ export default new Router({
     {
       path: '/layout/roster',
       component: Roster,
+    },
+    {
+      path: '/layout/processCenter',
+      component: ProcessCenter,
     },
     {
       path: '/myPage/pageTwo',

@@ -154,11 +154,12 @@
       </el-menu-item>
     </router-link>
 
-
+  <router-link to="/layout/processCenter" style="text-decoration:none;">
        <el-menu-item index="5">
         <!-- <i class="el-icon-menu"></i> -->
         <span slot="title">流程中心</span>
       </el-menu-item>
+  </router-link>
        <el-menu-item index="6">
         <i class="el-icon-time"></i>
         <span slot="title">个人考勤</span>
@@ -884,6 +885,7 @@ export default {
       // console.log(this.tab.index)
     },
     qq() {
+      console.log(new Date)
       console.log(this.tab.index);
       console.log(this.tab.activeIndex);
     },
