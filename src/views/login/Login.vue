@@ -44,9 +44,8 @@ import CryptoJS from "crypto-js";
 export default {
   data() {
     return {
-        key:{},
-        pass:'',
-        secretkey:'',
+      pass: "",
+      secretkey: "",
       form2: {
         username: "",
         password: ""
@@ -70,57 +69,87 @@ export default {
     //     alert(555)
     // },
     encryptByDES(pass) {
-        console.log(this)
-      const keyHex = CryptoJS.enc.Utf8.parse(this.secretkey);
+      //  await
+      //  console.log(this)
+      // const secretkey=55652235
+    //   const secretkey = this.secretKey;
+      const secretkey = "75068918";
+
+console.log(secretkey);
+      const keyHex = CryptoJS.enc.Utf8.parse(secretkey);
       const encrypted = CryptoJS.DES.encrypt(pass, keyHex, {
         mode: CryptoJS.mode.ECB,
         padding: CryptoJS.pad.Pkcs7
       });
+      	// console.log(encrypted.toString());
       return encrypted.toString();
     },
 
-    handleSubmit() {
-  
-          let para = {
-            username: this.form2.username,
-            password: this.form2.password
-          };
-          console.log(para)
+    async handleSubmit() {
+      let para = {
+        username: this.form2.username,
+        password: this.form2.password
+      };
 
+    //   debugger;
+      console.log(para);
+      console.log(para.username);
+      console.log(this.secretKey);
+      //   console.log(this.encryptByDES(this.form2.password))
+      console.log(this.pass);
+
+      await axios
+        .post("api/Login.do?_funccode_=C_Login&async=true&name=admin&pass=5eAljvxr/ZA=", {
+            // name:"admin",
+            // pass:this.encryptByDES("111111")
+        })
+        .then(function(response) {
+          console.log(response);
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
     },
-    async getSecretkey(){
-
+    async getSecretkey() {
     
-    const {data} = await  axios.get("api/demo12/mobile/noSession/secret_key", {
-            //   params: {
-            //     ID: 12345
-            //   }
-            })
-        console.log(data)
-        console.log(data.secretKey)
-        this.secretKey=data.secretkey
-        console.log(this.secretKey)
-            // .then(function(response) {
-            //     if(response.data.errcode==0){
-            //   console.log(response.data.secretkey);
-            // //   console.log(1)
-            //   console.log(secretKey1)
-            // //   this.secretKey=response.data.secretkey
-            //     }
-            // })
-            // .catch(function(error) {
-            //   console.log(error);
-            // });
+      const { data } = await axios.get(
+        "api/mobile/noSession/secret_key",
+        {
+          //   params: {
+          //     ID: 12345
+          //   }
+        }
+      );
+      console.log(data);
+      // console.log(data.secretKey)
+      this.secretKey = data.secretkey;
+      console.log(this.secretKey);
+    //   this.pass = this.encryptByDES("111111");
+//  console.log(this.pass);
+      // .then(function(response) {
+      //     if(response.data.errcode==0){
+      //   console.log(response.data.secretkey);
+      // //   console.log(1)
+      //   console.log(secretKey1)
+      // //   this.secretKey=response.data.secretkey
+      //     }
+      // })
+      // .catch(function(error) {
+      //   console.log(error);
+      // });
     }
-  }, 
-
+  },
 
   created() {
-  this.getSecretkey();
-         
+    // this.getSecretkey();
+
     // const _key = '888'
-    const _password = "111111";
-    console.log(this.encryptByDES(_password));
+  },
+  mounted() {
+    //   const _password = "111111";
+    //   console.log(this.form2.password)
+    // this.encryptByDES(this.form2.password);
+    // console.log(this.encryptByDES(_password));
   }
 };
 </script>

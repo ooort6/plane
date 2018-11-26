@@ -51,7 +51,7 @@
         // proxy: 'http://localhost:4000' // 配置跨域处理,只有一个代理
         proxy: {
             '/api': {
-                target: 'http://test.many-it.com:80',
+                target: 'http://test.many-it.com:80/demo12',
                 changeOrigin: true,
                 ws: true,
                 pathRewrite: {
