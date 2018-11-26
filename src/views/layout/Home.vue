@@ -48,9 +48,9 @@
   <el-col :span="12">
           
     <div class="grid-content bg-purple">
-    <p>Original message: "{{ message }}"</p>
-    <p>Computed reversed message: "{{ reversedMessage }}"</p>
-    <p>Date: "{{ nowTime }}"</p>
+    <span>Original message: "{{ message }}"</span><br>
+    <span>Computed reversed message: "{{ reversedMessage }}"</span><br>
+    <span>Date: "{{ nowTime }}"</span>
       </div></el-col>
   <el-col :span="12"><div class="grid-content bg-purple"></div></el-col>
 

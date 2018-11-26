@@ -11,7 +11,7 @@ import Home from './views/layout/Home.vue';
 import PersonManage from './views/layout/PersonManage.vue';
 import Roster from './views/layout/Roster.vue';
 import ProcessCenter from './views/layout/ProcessCenter.vue';
-
+import Login from './views/login/Login.vue'
 
 // import PageFive from './views/myPage/PageFive.vue';
 
@@ -25,13 +25,14 @@ export default new Router({
     //首页门户
     {
       path: '/',
-      name: 'home',
-      component: Home,
+      name: 'login',
+      component: Login,
     },
     // {
     //   path: '/myPage/pageOne',
     //   component: PageOne,
     // },
+   
     {
       path: '/layout/home',
       component: Home,

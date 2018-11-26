@@ -1,6 +1,6 @@
 <template>
-  <div id="app">
-    <el-header id="header">
+  <div id="app" >
+    <el-header id="header" v-if="block">
       <el-row type="flex"
               align="middle"
               style="height: 60px;">
@@ -106,7 +106,7 @@
    <!-- {{this.tab.activeIndex==1?<div>222asasa</div>:''}} -->
     <el-container class="hpct100">
 
-      <el-aside v-if="this.tab.index==1" style="width:15.8125rem;">
+      <el-aside v-if="this.tab.index==1&&this.block==true" style="width:15.8125rem;">
        <el-menu
    
       default-active="1"
@@ -682,7 +682,7 @@
 
       <el-container class="hpct100">
         <el-main>
-          <levelbar style="margin-bottom:2%"/>
+          <levelbar style="margin-bottom:2%" v-if="block"/>
           <router-view/>
           <!-- <router-view></router-view> -->
         </el-main>
@@ -875,7 +875,8 @@ export default {
         isShow: false,
         isShow1: true
         // activeIndex2: '1'
-      }
+      },
+      block:true
     };
   },
   init: {},
@@ -884,10 +885,17 @@ export default {
       console.log(key, keyPath);
       // console.log(this.tab.index)
     },
+    ww(){
+      if(this.$route.path=='/'){
+        // alert(222)
+        this.block=false;
+      }
+    },
     qq() {
       console.log(new Date)
       console.log(this.tab.index);
       console.log(this.tab.activeIndex);
+      console.log(this.$route.path)
     },
     handleClose(key, keyPath) {
       console.log(key, keyPath);
@@ -931,6 +939,9 @@ export default {
       //      console.log(this.tab.activeIndex)
       // console.log(this.tab.index)
     }
+  },
+  mounted(){
+    this.ww();
   }
 };
 </script>
