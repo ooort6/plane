@@ -5,7 +5,10 @@ import App from './App.vue';
 import router from './router';
 import store from './store';
 import './registerServiceWorker';
-import axios from 'axios'
+import axios from 'axios';
+import qs from 'qs'
+Vue.prototype.$http = axios
+Vue.prototype.$qs=qs
 
 
 var service=axios.create({

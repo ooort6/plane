@@ -51,13 +51,13 @@
         // proxy: 'http://localhost:4000' // 配置跨域处理,只有一个代理
         proxy: {
             '/api': {
-                // 目标 API 地址
-                target: 'http://test.many-it.com:80/',
-                // 如果要代理 websockets
-                // ws: true,
-                // 将主机标头的原点更改为目标URL
-                changeOrigin: true
+                target: 'http://test.many-it.com:80',
+                changeOrigin: true,
+                ws: true,
+                pathRewrite: {
+                  '^/api': ''
+                }
             }
-        },
+        }
     }
 }

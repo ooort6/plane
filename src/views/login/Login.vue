@@ -44,6 +44,9 @@ import CryptoJS from "crypto-js";
 export default {
   data() {
     return {
+        key:{},
+        pass:'',
+        secretkey:'',
       form2: {
         username: "",
         password: ""
@@ -67,8 +70,8 @@ export default {
     //     alert(555)
     // },
     encryptByDES(pass) {
-      const secretKey = 32576081;
-      const keyHex = CryptoJS.enc.Utf8.parse(secretKey);
+        console.log(this)
+      const keyHex = CryptoJS.enc.Utf8.parse(this.secretkey);
       const encrypted = CryptoJS.DES.encrypt(pass, keyHex, {
         mode: CryptoJS.mode.ECB,
         padding: CryptoJS.pad.Pkcs7
@@ -77,67 +80,44 @@ export default {
     },
 
     handleSubmit() {
-      this.$refs.form2.validate(valid => {
-        if (valid) {
+  
           let para = {
             username: this.form2.username,
             password: this.form2.password
           };
+          console.log(para)
 
-          //   Login(para).then(res => {
-          //     let { msg, code, user } = res;
-          //     if (code !== 200) {
-          //       this.$message.error(msg);
-          //     } else {
-          //       this.$message.success(msg);
-          //       sessionStorage.setItem(
-          //         "username",
-          //         JSON.stringify(this.form2.username)
-          //       );
-          //       this.$router.push({ path: "/user" });
-          //     }
-          //   });
-        } else {
-        //   axios({
-        //     headers: {
-        //       "X-Requested-With": "XMLHttpRequest",
-        //       "Content-Type": "application/json; charset=UTF-8",
-        //       "Access-Control-Allow-Origin": "*"
-        //     }, //设置跨域请求头
-        //     method: "GET", //请求方式
-        //     url:
-        //     //   "https://solelynet.com/public/index.php/api/v1/UserMenu/GetTree", 
-        //       "http://test.many-it.com:80/demo12/mobile/noSession/secret_key",    //请求地址
-        //     data: {
-        //     //请求参数
-        //     }
-        //   })
-        //     .then(function(res) {
-        //       //返回值
-        //       console.log(res.data);
-        //     //   for (var i = 0; i < res.data.length; i++) {
-        //     //     console.log(res.data[i].name);
-        //     //   }
-        //     })
-        //     .catch(function(err) {
-        //       console.log(err);
-        //     });
+    },
+    async getSecretkey(){
 
-
-         axios
-      .get("api/demo12/mobile/noSession/secret_key")
-      .then(response => {
-          console.log(response.data.bpi)
-        this.info = response.data.bpi;
-      });
-
-          console.log(3);
-          return false;
-        }
-      });
+    
+    const {data} = await  axios.get("api/demo12/mobile/noSession/secret_key", {
+            //   params: {
+            //     ID: 12345
+            //   }
+            })
+        console.log(data)
+        console.log(data.secretKey)
+        this.secretKey=data.secretkey
+        console.log(this.secretKey)
+            // .then(function(response) {
+            //     if(response.data.errcode==0){
+            //   console.log(response.data.secretkey);
+            // //   console.log(1)
+            //   console.log(secretKey1)
+            // //   this.secretKey=response.data.secretkey
+            //     }
+            // })
+            // .catch(function(error) {
+            //   console.log(error);
+            // });
     }
-  },
-  mounted() {
+  }, 
+
+
+  created() {
+  this.getSecretkey();
+         
     // const _key = '888'
     const _password = "111111";
     console.log(this.encryptByDES(_password));
