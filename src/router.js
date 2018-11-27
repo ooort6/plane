@@ -7,8 +7,9 @@ import PageFour from './views/myPage/PageFour.vue';
 import PageThree from './views/myPage/PageThree.vue';
 import PageFive from './views/myPage/PageFive.vue';
 import Detail1 from './views/detail/Detail1.vue';
-import Home from './views/layout/Home.vue';
+import Home from './views/Home.vue';
 import PersonManage from './views/layout/PersonManage.vue';
+import User from './views/layout/User.vue';
 import Roster from './views/layout/Roster.vue';
 import ProcessCenter from './views/layout/ProcessCenter.vue';
 import Login from './views/login/Login.vue'
@@ -24,7 +25,7 @@ export default new Router({
   routes: [
     //首页门户
     {
-      path: '/',
+      path: '/login',
       name: 'login',
       component: Login,
     },
@@ -32,23 +33,32 @@ export default new Router({
     //   path: '/myPage/pageOne',
     //   component: PageOne,
     // },
-   
+
     {
-      path: '/layout/home',
+      path: '/',
+      name: 'home',
       component: Home,
+      children: [{
+          path: '/layout/user',
+          component: User,
+          name: 'user'
+        },
+        {
+          path: '/layout/personManage',
+          component: PersonManage,
+        },
+        {
+          path: '/layout/roster',
+          component: Roster,
+        },
+        {
+          path: '/layout/processCenter',
+          component: ProcessCenter,
+        },
+      ]
     },
-    {
-      path: '/layout/personManage',
-      component: PersonManage,
-    },
-    {
-      path: '/layout/roster',
-      component: Roster,
-    },
-    {
-      path: '/layout/processCenter',
-      component: ProcessCenter,
-    },
+
+   
     {
       path: '/myPage/pageTwo',
       component: PageTwo,

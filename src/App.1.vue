@@ -9,7 +9,7 @@
         </el-col>
 <el-col :span="9" class="chang"  v-show="tab.isShow1">
  <el-menu :default-active="tab.activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
- <el-menu-item v-model="tab.index"  index="1"><router-link to="/layout/user" style="text-decoration:none;display:block;">首页门户</router-link></el-menu-item>
+ <el-menu-item v-model="tab.index"  index="1"><router-link to="/layout/home" style="text-decoration:none;display:block;">首页门户</router-link></el-menu-item>
  <el-menu-item  v-model="tab.index" index="2">栏目维护</el-menu-item>
   <el-menu-item  v-model="tab.index" index="3"><router-link to="/detail/detail1" style="text-decoration:none;display:block">日常办公</router-link></el-menu-item>
   <el-menu-item  v-model="tab.index" index="4">客户合同管理</el-menu-item>
@@ -32,7 +32,7 @@
 <div id="navs"  v-show="tab.isShow"  >
 <el-col :span="9">
  <el-menu :default-active="tab.activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect" >
- <el-menu-item v-model="tab.index"  index="1"><router-link to="/layout/user" style="text-decoration:none;">首页门户</router-link></el-menu-item>
+ <el-menu-item v-model="tab.index"  index="1"><router-link to="/layout/home" style="text-decoration:none;">首页门户</router-link></el-menu-item>
  <el-menu-item  v-model="tab.index" index="2">栏目维护</el-menu-item>
   <el-menu-item  v-model="tab.index" index="3">日常办公</el-menu-item>
   <el-menu-item  v-model="tab.index" index="4">客户合同管理</el-menu-item>
@@ -113,7 +113,7 @@
       class="el-menu-vertical-demo"
       @open="handleOpen"
       @close="handleClose">
- <router-link to="/layout/user" style="text-decoration:none;">
+ <router-link to="/layout/home" style="text-decoration:none;">
      <el-menu-item index="1">
         <!-- <i class="el-icon-menu"></i> -->
         <span slot="title">公司门户</span>
@@ -683,9 +683,7 @@
       <el-container class="hpct100">
         <el-main>
           <levelbar style="margin-bottom:2%" v-if="block"/>
-           <transition name="fade" mode="out-in">
           <router-view/>
-           </transition>
           <!-- <router-view></router-view> -->
         </el-main>
       </el-container>
@@ -779,7 +777,7 @@
 .liuchengjiankong{
 
   // color: red;
-  background: url(../assets/liuchengjiankong.png) no-repeat;
+  background: url(./assets/liuchengjiankong.png) no-repeat;
   width: 1.3125rem;
   height: 1.3125rem;
   display: inline-block;
@@ -792,7 +790,7 @@
 .shuiguan{
 
   // color: red;
-  background: url(../assets/shuiguan.png) no-repeat;
+  background: url(./assets/shuiguan.png) no-repeat;
   width: 1.3125rem;
   height: 1.3125rem;
   display: inline-block;
@@ -806,7 +804,7 @@
 .laba{
 
   // color: red;
-  background: url(../assets/laba.png) no-repeat;
+  background: url(./assets/laba.png) no-repeat;
   width: 1.3125rem;
   height: 1.3125rem;
   display: inline-block;
@@ -819,7 +817,7 @@
 .yaochi{
 
   // color: red;
-  background: url(../assets/yaochi.png) no-repeat;
+  background: url(./assets/yaochi.png) no-repeat;
   width: 1.3125rem;
   height: 1.3125rem;
   display: inline-block;
@@ -862,7 +860,7 @@
 // }
 </style>
 <script>
-import { Levelbar } from "../views/components";
+import { Levelbar } from "./views/components";
 export default {
   components: {
     Levelbar
@@ -891,8 +889,7 @@ export default {
       console.log(this.$route.path)
       if(this.$route.path=='/'){
         // alert(222)
-        // this.block=false;
-        console.log(3)
+        this.block=false;
       }
     },
     qq() {

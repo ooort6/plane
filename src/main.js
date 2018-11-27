@@ -17,6 +17,19 @@ var service=axios.create({
 })
 
 
+router.beforeEach((to, from, next) => {
+  if(to.path === '/login') {
+    sessionStorage.removeItem('username');
+  }
+  let user = JSON.parse(sessionStorage.getItem('username'));
+  if(!user && to.path !== '/login') {
+    next({ path: '/login' });
+  } else {
+    next()
+  }
+})
+
+
 
 service.interceptors.request.use(function(config){
   if(store.getters.token){

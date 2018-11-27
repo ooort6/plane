@@ -32,7 +32,7 @@
       </el-select>
 
 
-      <el-button class="filter-item" type="primary" v-waves icon="search" style="width: 130px;" >查询</el-button>
+      <el-button class="filter-item" type="primary"  icon="search" style="width: 130px;" >查询</el-button>
      <div style="float:right">
 <el-button class="filter-item" type="primary"   icon="edit">导入</el-button>
 
@@ -85,7 +85,7 @@
     <el-pagination
       @size-change="handleSizeChange"
       @current-change="handleCurrentChange"
-      :current-page="currentPage4"
+    
       :page-size="10"
  
       layout="total, prev, pager, next, jumper"
