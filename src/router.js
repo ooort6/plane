@@ -29,10 +29,7 @@ export default new Router({
       name: 'login',
       component: Login,
     },
-    // {
-    //   path: '/myPage/pageOne',
-    //   component: PageOne,
-    // },
+ 
 
     {
       path: '/',

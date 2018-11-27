@@ -3,7 +3,7 @@
    <el-row :gutter="24">
   <el-col :span="12">
     
-    <div class="grid-content bg-purple">
+    <div class="grid-content ">
      
        <el-card class="box-card" shadow="hover">
   <div slot="header" class="clearfix">
