@@ -20,6 +20,7 @@ var service=axios.create({
 router.beforeEach((to, from, next) => {
   if(to.path === '/login') {
     sessionStorage.removeItem('username');
+    sessionStorage.removeItem('data1');
   }
   let user = JSON.parse(sessionStorage.getItem('username'));
   if(!user && to.path !== '/login') {

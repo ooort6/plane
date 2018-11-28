@@ -123,6 +123,7 @@ export default {
       message: "Hello",
       nowTime:'',
       // date:null,
+      // data2:{},
       tableData: [
         {
           date: "2016-05-03",
@@ -202,7 +203,7 @@ export default {
   },
   methods: {
    timeFormate(timeStamp) {
-          let year = new Date(timeStamp).getFullYear();
+      let year = new Date(timeStamp).getFullYear();
       let month =new Date(timeStamp).getMonth() + 1 < 10? "0" + (new Date(timeStamp).getMonth() + 1): new Date(timeStamp).getMonth() + 1;
       let date =new Date(timeStamp).getDate() < 10? "0" + new Date(timeStamp).getDate(): new Date(timeStamp).getDate();
       let hh =new Date(timeStamp).getHours() < 10? "0" + new Date(timeStamp).getHours(): new Date(timeStamp).getHours();
@@ -213,7 +214,36 @@ export default {
     nowTimes(){
       this.timeFormate(new Date());
     },
+//     datatree(){
+//       let data1 = JSON.parse(sessionStorage.getItem('data1'));
+//       this.data2=data1;
+//       // console.log(this.data2)
+//       // debugger;
+//     },
+ 
+//     transTreeData(items){
+//        if(items.length>0){
+//         var curPid= "M" //pid=0，为最上层节点 ，即无父节点
+//         var parent=this.findChild(curPid);//数组
+//         return parent;
+//         }else{
+//         return [];
+//         }
+//     },
 
+//     findChild (curPid){
+//       var _arr = [];
+//       var items=this.data2;
+//       var length=items.length;
+//       for(var i = 0; i < length; i++){
+//         if(items[i].UPMENUID == curPid){
+//             var _obj = items[i];
+//             _obj.childs = this.findChild(_obj.RIGHTID);
+//             _arr.push(_obj);
+//         }
+//     }
+//     return _arr;
+// },
 
     indexMethod(index) {
       return index * 2;
@@ -222,8 +252,8 @@ export default {
   mounted(){
     this.nowTimes();
     setInterval(this.nowTimes,1000);
-
-
+    // this.datatree()
+    // console.log(this.transTreeData(this.data2))
   }
   
 };

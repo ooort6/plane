@@ -36,21 +36,25 @@ export default new Router({
       name: 'home',
       component: Home,
       children: [{
-          path: '/layout/user',
+          path: '/GSMH',
           component: User,
           name: 'user'
         },
         {
-          path: '/layout/personManage',
+          path: '/RSGL',
           component: PersonManage,
         },
         {
-          path: '/layout/roster',
+          path: '/YGHMC',
           component: Roster,
         },
         {
-          path: '/layout/processCenter',
+          path: '/LCZX',
           component: ProcessCenter,
+        },
+        {
+          path: '/GRKQ',
+          component: Detail1,
         },
       ]
     },
@@ -59,6 +63,7 @@ export default new Router({
     {
       path: '/myPage/pageTwo',
       component: PageTwo,
+      name:'rt'
     },
     {
       path: '/myPage/pageThree',
@@ -72,10 +77,7 @@ export default new Router({
       path: '/myPage/pageFive',
       component: PageFive,
     },
-    {
-      path: '/detail/detail1',
-      component: Detail1,
-    },
+   
     // {
     //   path: '/myPage/PageFive',
     //   component: PageFive,

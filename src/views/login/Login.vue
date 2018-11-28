@@ -46,6 +46,7 @@ export default {
     return {
       pass: "",
       secretkey: "",
+      data1:{},
       form2: {
         username: "",
         password: ""
@@ -108,17 +109,22 @@ export default {
       formData.append("pass", this.form2.password);
 
       this.$http.post("api/Login.do", formData).then(function(res) {
-     
+      console.log(res); /*这里做处理*/
         if(res.data._returncode_==0){
           this.$message({
           showClose: true,
           message: '登陆成功',
           type: 'success'
         });
-           console.log(res); /*这里做处理*/
+          
+           this.data1=res.data;
              sessionStorage.setItem(
                 "username",
                 JSON.stringify(this.form2.username)
+              );
+               sessionStorage.setItem(
+                "data1",
+                JSON.stringify(this.data1.MENULIST)
               );
             this.$router.push({name: 'user', params: {}})
         }
