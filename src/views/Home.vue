@@ -174,7 +174,7 @@
 
       <el-container class="hpct100">
         <el-main>
-          <levelbar style="margin-bottom:2%" v-if="block"/>
+          <levelbar style="margin-bottom:2%" />
            <transition name="fade" mode="out-in">
           <router-view/>
            </transition>
