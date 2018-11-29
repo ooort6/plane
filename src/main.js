@@ -9,7 +9,7 @@ import axios from 'axios';
 import qs from 'qs'
 Vue.prototype.$http = axios
 Vue.prototype.$qs=qs
-
+axios.defaults.withCredentials=true;
 
 var service=axios.create({
   baseURL:process.env.BASE_API,

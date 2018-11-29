@@ -29,8 +29,16 @@
             </el-form-item>
         </el-form>
           <div class="login3" style="float:left">
-       <img src="../.././assets/logo.png" alt="" style="width:100px;height:100px;float:left;display:block;margin-right:5%">
-        <img src="../.././assets/logo.png" alt="" style="width:100px;height:100px;float:left;display:block">
+            <div  style="width:100px;height:200px;float:left;display:block;margin-right:5%">
+<img src="../.././assets/erweima.jpg" alt="" style="margin-bottom:10%">
+<span style="text-align:center;display:block;font-size: 12px;color: #666;">手机客户端</span>
+            </div> 
+            <div  style="width:100px;height:200px;float:left;display:block;margin-right:5%">
+<img src="../.././assets/erweima1.png" alt="" style="margin-bottom:10%"> 
+<span style="text-align:center;display:block;font-size: 12px;color: #666;">企业微信</span>
+
+            </div>
+       
     </div>
     </div>
 </template>
@@ -94,7 +102,7 @@ export default {
       };
 
       //   debugger;
-    this.getSecretkey();
+    // this.getSecretkey();
 
       console.log(para);
       console.log(para.username);
@@ -108,7 +116,8 @@ export default {
       formData.append("name", this.form2.username);
       formData.append("pass", this.form2.password);
 
-      this.$http.post("api/Login.do", formData).then(function(res) {
+
+      this.$http.post("/demo12/Login.do", formData,{withCredentials : true}).then(function(res) {
       console.log(res); /*这里做处理*/
         if(res.data._returncode_==0){
           this.$message({
@@ -153,7 +162,7 @@ export default {
       //   });
     },
     async getSecretkey() {
-      const { data } = await axios.get("api/mobile/noSession/secret_key", {
+      const { data } = await axios.get("/demo12/mobile/noSession/secret_key", {
         //   params: {
         //     ID: 12345
         //   }

@@ -42,21 +42,64 @@
 
   <el-table
     :data="tableData7.slice((currentPage-1)*pagesize,currentPage*pagesize)"
+    align="center"
+    border
+    header-align="center"
+    stripe
     style="width: 100%">
+     <el-table-column
+      label="序号"
+      type="index"
+      width="100">
+    </el-table-column>
+  
     <el-table-column
-      label="Date"
-      prop="date">
+      label="员工"
+      prop="NAME"
+      width="200">
+
+    </el-table-column>
+
+    <el-table-column
+      label="部门名称"
+      prop="DEPTNAME"
+      width="200">
+   
+    </el-table-column>
+     <el-table-column
+      label="工号"
+      prop="WORKNO"
+      width="150">
+   
+    </el-table-column>
+     <el-table-column
+      label="性别"
+      prop="GENDER"
+      width="150">
+   
+    </el-table-column>
+     <el-table-column
+      label="生日"
+      prop="BIRTHDAY"
+      width="150">
+   
+    </el-table-column>
+     <el-table-column
+      label="学历"
+      prop="DEPTNAME"
+      width="200">
+   
+    </el-table-column>
+     <el-table-column
+      label="状态"
+      prop="DEPTNAME"
+      width="200">
+   
     </el-table-column>
     <el-table-column
-      label="Name"
-      prop="name">
-    </el-table-column>
-    <el-table-column
-      label="Address"
-      prop="address">
-    </el-table-column>
-    <el-table-column
-      align="right">
+     label="操作"
+      align="left"
+     >
       <!-- <template slot="header" slot-scope="scope">
        
         <el-input
@@ -90,163 +133,75 @@
   </div>
 </template>
 <script>
-  export default {
-    data() {
-      return {
+import axios from "axios";
 
-           form: {
-        
-          region: '',
-        
-        },
-          list:null,
-          total:14,
-           currentPage:1,
-           pagesize:10,
-        tableData7: [{
-          date: '2016-05-02',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1517 弄'
-        },{
-          date: '2016-05-04',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1517 弄'
-        },{
-          date: '2016-05-04',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1517 弄'
-        },{
-          date: '2016-05-04',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1517 弄'
-        },{
-          date: '2016-05-04',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1517 弄'
-        },{
-          date: '2016-05-04',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1517 弄'
-        },{
-          date: '2016-05-04',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1517 弄'
-        },{
-          date: '2016-05-04',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1517 弄'
-        },{
-          date: '2016-05-04',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1517 弄'
-        },{
-          date: '2016-05-04',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1517 弄'
-        },{
-          date: '2016-05-04',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1517 弄'
-        },{
-          date: '2016-05-04',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1517 弄'
-        },{
-          date: '2016-05-04',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1517 弄'
-        },{
-          date: '2016-05-04',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1517 弄'
-        },{
-          date: '2016-05-04',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1517 弄'
-        },{
-          date: '2016-05-04',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1517 弄'
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1519 弄'
-        },{
-          date: '2016-05-01',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1519 弄'
-        },{
-          date: '2016-05-01',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1519 弄'
-        },{
-          date: '2016-05-01',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1519 弄'
-        },{
-          date: '2016-05-01',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1519 弄'
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1519 弄'
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1519 弄'
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1519 弄'
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1519 弄'
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1519 弄'
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1519 弄'
-        }, {
-          date: '2016-05-03',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1516 弄'
-        }],
-        search: ''
-      }
+export default {
+  data() {
+    return {
+      form: {
+        region: ""
+      },
+      top: {},
+      list: null,
+      total: 14,
+      currentPage: 1,
+      pagesize: 10,
+      tableData7: [],
+      search: ""
+    };
+  },
+  mounted() {
+    let vm = this;
+    this.topGetData();
+  },
+  methods: {
+    handleSizeChange(val) {
+      //  this.total=this.tableData7.length;
+      console.log(`每页 ${val} 条`);
     },
-    mounted(){
-        let vm=this;
-
+    handleCurrentChange(val) {
+      this.currentPage = val;
+      console.log(`当前页: ${val}`);
     },
-    methods: {
-         handleSizeChange(val) {
-            //  this.total=this.tableData7.length;
-        console.log(`每页 ${val} 条`);
-      },
-      handleCurrentChange(val) {
-          this.currentPage =val;
-        console.log(`当前页: ${val}`);
-      },
-      handleEdit(index, row) {
+    handleEdit(index, row) {
+      console.log(index, row);
+    },
+    handleDelete(index, row) {
+      //    let vm = this;
+      //   vm.list.splice(index,1)
+      console.log(this);
+      this.tableData7.splice(index, 1);
+      console.log(index, row);
+    },
+    async topGetData() {
+      let formData = new FormData();
+      formData.append("_funccode_", "C_DataSearchManager");
 
-        console.log(index, row);
-      },
-      handleDelete(index, row) {
-        //    let vm = this;
-        //   vm.list.splice(index,1)
-        console.log(this)
-        this.tableData7.splice(index,1)
-        console.log(index, row);
-      },
+      formData.append("action", "exesqlbyjqgridbysearchid");
+      formData.append("search_id", 22878);
+      // formData.append(
+      //   "url",
+      //   "http://test.many-it.com/demo12/redirectSyncAction.do?_funccode_=C_GetSearchTemplate&search_key=e6116f76-461b-4fcd-9b42-d5c4bee2b242&_menuid_=M29617&_top_menuid=M25366"
+      // );
+
+      formData.append("_page_request_", 1);
+      formData.append("_records_perpage_", 9999);
+
+      this.$http.post("/demo12/AsyncAction.do", formData).then(
+        function(res) {
+
+          console.log(res.data._rows_); /*这里做处理*/
+          this.tableData7=res.data._rows_
+          // if(res.data._returncode_==0){
+          // }
+          // if(res.data._returncode_!=0&&this.form2.username!=''&&this.form2.password!=0){
+          // }
+          //     if (res.status === 2000) {
+          //   }
+        }.bind(this)
+      );
+    }
+
     //   created:function(){
     //      this.total=this.tableData7.length;
     //   },
@@ -254,6 +209,6 @@
     //     //  debugger;
     //     this.currentPage = currentPage;
     //   }
-    },
   }
+};
 </script>

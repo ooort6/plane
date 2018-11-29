@@ -50,12 +50,12 @@
         open: true, //配置自动启动浏览器
         // proxy: 'http://localhost:4000' // 配置跨域处理,只有一个代理
         proxy: {
-            '/api': {
-                target: 'http://test.many-it.com:80/demo12',
+            '/demo12': {
+                target: 'http://test.many-it.com:80',
                 changeOrigin: true,
-                ws: true,
+                // ws: true,
                 pathRewrite: {
-                  '^/api': ''
+                  '^/demo12': 'demo12'
                 }
             }
         }

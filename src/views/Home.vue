@@ -467,6 +467,7 @@ export default {
     console.log(this.transTreeData(this.data2));
     this.data3 = this.transTreeData(this.data2);
     console.log(this.data3);
+    // Log.info("SessionId:" + request.getSession().getId());
   }
 };
 </script>
