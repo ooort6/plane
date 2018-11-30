@@ -28,12 +28,18 @@ export default {
     }
   },
   mounted() {
-    axios
-      .get("https://api.coindesk.com/v1/bpi/currentprice.json")
-      .then(response => {
-          console.log(response.data.bpi)
-        this.info = response.data.bpi;
-      });
+    // axios
+    //   .get("https://api.coindesk.com/v1/bpi/currentprice.json",{
+    //      headers: {
+    //       //  'Content-Type':'application/x-www-form-urlencoded',
+    //       //  "Access-Control-Allow-Origin":"*"
+    //     }
+
+    //   })
+    //   .then(response => {
+    //       console.log(response.data.bpi)
+    //     this.info = response.data.bpi;
+    //   });
   }
 };
 </script>

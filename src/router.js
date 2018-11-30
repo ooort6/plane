@@ -12,7 +12,12 @@ import PersonManage from './views/layout/PersonManage.vue';
 import User from './views/layout/User.vue';
 import Roster from './views/layout/Roster.vue';
 import ProcessCenter from './views/layout/ProcessCenter.vue';
-import Login from './views/login/Login.vue'
+import GCSQ from './views/layout/GCSQ.vue';
+import GRLL from './views/layout/GRLL.vue';
+import GRXX from './views/layout/GRXX.vue';
+
+
+import Login from './views/login/Login.vue';
 
 // import PageFive from './views/myPage/PageFive.vue';
 
@@ -55,6 +60,18 @@ export default new Router({
         {
           path: '/GRKQ',
           component: Detail1,
+        },
+        {
+          path: '/GCSQ',
+          component: GCSQ,
+        },
+        {
+          path: '/GRLL',
+          component: GRLL,
+        },
+        {
+          path: '/GRXX',
+          component: GRXX,
         },
       ]
     },

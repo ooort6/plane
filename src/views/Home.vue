@@ -464,9 +464,9 @@ export default {
   mounted() {
     this.ww();
     this.datatree();
-    console.log(this.transTreeData(this.data2));
+    // console.log(this.transTreeData(this.data2));
     this.data3 = this.transTreeData(this.data2);
-    console.log(this.data3);
+    // console.log(this.data3);
     // Log.info("SessionId:" + request.getSession().getId());
   }
 };
